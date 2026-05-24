@@ -1,0 +1,187 @@
+:root {
+    --bg-main: #f3f4f6;
+    --bg-card: #ffffff;
+    --text-main: #1f2937;
+    --text-muted: #6b7280;
+    --primary-color: #4f46e5;
+    --primary-hover: #4338ca;
+    --correct-color: #10b981;
+    --correct-bg: #ecfdf5;
+    --wrong-color: #ef4444;
+    --wrong-bg: #fef2f2;
+    --border-radius: 12px;
+    --box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.quiz-container {
+    background-color: var(--bg-card);
+    width: 100%;
+    max-width: 480px;
+    padding: 35px 30px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    border: 1px solid #e5e7eb;
+}
+
+h2 {
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+    text-align: center;
+}
+
+.quiz-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #f3f4f6;
+    padding-bottom: 15px;
+}
+
+.quiz-header h2 {
+    font-size: 20px;
+}
+
+#question-counter {
+    font-size: 11px;
+    color: var(--text-muted);
+    font-weight: 500;
+    background-color: #f1f5f9;
+    padding: 4px 10px;
+    border-radius: 20px;
+}
+
+.timer-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    background-color: #fffbeb;
+    border: 1px solid #fef3c7;
+    color: #b45309;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 4px 12px;
+    border-radius: 30px;
+    width: fit-content;
+    margin-bottom: 25px;
+}
+
+.option-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+.option-btn {
+    background-color: #fff;
+    color: var(--text-main);
+    border: 1px solid #d1d5db;
+    padding: 14px 16px;
+    text-align: left;
+    font-size: 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    width: 100%;
+}
+
+.option-btn:hover:not([disabled]) {
+    border-color: var(--primary-color);
+    background-color: #f8fafc;
+}
+
+.option-btn.correct {
+    background-color: var(--correct-bg);
+    border-color: var(--correct-color);
+    color: var(--correct-color);
+    font-weight: 500;
+}
+
+.option-btn.wrong {
+    background-color: var(--wrong-bg);
+    border-color: var(--wrong-color);
+    color: var(--wrong-color);
+    font-weight: 500;
+}
+
+.next-btn, .restart-btn {
+    background-color: var(--primary-color);
+    color: #fff;
+    border: none;
+    width: 100%;
+    padding: 14px;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.next-btn:hover { background-color: var(--primary-hover); }
+
+.back-btn {
+    background: transparent;
+    color: var(--text-muted);
+    border: 1px solid #d1d5db;
+    width: 100%;
+    padding: 12px;
+    font-size: 13px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+}
+.back-btn:hover { background-color: #f9fafb; color: var(--text-main); }
+
+.result-screen { text-align: center; }
+.result-icon { font-size: 48px; margin-bottom: 15px; text-align: center;}
+.result-screen p { font-size: 14px; color: var(--text-muted); margin-bottom: 20px; text-align: center;}
+
+.score-board {
+    font-size: 32px;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 30px;
+    background-color: #f5f3ff;
+    display: block;
+    width: fit-content;
+    margin: 0 auto 30px auto;
+    padding: 10px 30px;
+    border-radius: 50px;
+}
+
+/* ফর্ম কন্ট্রোল (অ্যাডমিন প্যানেল) */
+.form-control { margin-bottom: 15px; }
+label { display: inline-block; margin-bottom: 6px; font-size: 13px; font-weight: 500; }
+input[type='text'], select {
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    display: block;
+    font-size: 14px;
+    padding: 12px;
+    width: 100%;
+    outline: none;
+}
+input[type='text']:focus, select:focus { border-color: var(--primary-color); }
+
+.mt-10 { margin-top: 10px; }
+.hide { display: none !important; }

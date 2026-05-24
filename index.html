@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Quiz App with Dynamic Levels</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div id="mode-screen" class="quiz-container">
+        <h2>Welcome to Quiz Pro</h2>
+        <p style="text-align: center; color: var(--text-muted); margin-bottom: 20px;">Choose your role to proceed</p>
+        <button id="player-mode-btn" class="next-btn" style="margin-bottom: 15px;">Enter Player Mode</button>
+        <button id="admin-mode-btn" class="restart-btn" style="background-color: #4b5563;">Enter Admin Mode</button>
+    </div>
+
+    <div id="level-screen" class="quiz-container hide">
+        <h2>Select Quiz Level</h2>
+        <div id="level-buttons" class="option-container" style="margin-top: 20px;">
+            </div>
+        <button class="back-btn mt-10">Back to Main Menu</button>
+    </div>
+
+    <div id="quiz-screen" class="quiz-container hide">
+        <div class="quiz-header">
+            <h2 id="current-level-title">Level 1</h2>
+            <span id="question-counter">Question 1 of 10</span> 
+        </div>
+
+        <div class="timer-container">
+            <span class="timer-icon">⏳</span>
+            <span id="time-left">10</span>s
+        </div>
+        
+        <div class="question-box">
+            <h3 id="question-text">Loading question...</h3>
+        </div>
+
+        <div id="option-buttons" class="option-container"></div>
+
+        <button id="next-btn" class="next-btn hide">Next Question</button>
+    </div>
+
+    <div id="result-screen" class="quiz-container hide">
+        <div class="result-icon">🎉</div>
+        <h2>Quiz Completed!</h2>
+        <p>Your final score for this level:</p>
+        <div class="score-board">
+            <span id="final-score">0</span> / <span id="total-questions">10</span>
+        </div>
+        <button id="restart-btn" class="next-btn" style="margin-bottom: 10px;">Play Again</button>
+        <button id="go-to-levels-btn" class="back-btn">Go to Levels</button>
+    </div>
+
+    <div id="admin-screen" class="quiz-container hide">
+        <h2>Admin Panel</h2>
+        <p style="font-size: 12px; color: var(--text-muted); margin-bottom: 20px; text-align: center;">Create new levels & add questions dynamically</p>
+        
+        <form id="admin-form">
+            <div class="form-control">
+                <label>Level Name</label>
+                <input type="text" id="admin-level" placeholder="e.g., Level 1, Level 4, Science Quiz" required>
+            </div>
+            <div class="form-control">
+                <label>Question Text</label>
+                <input type="text" id="admin-question" placeholder="Enter the question..." required>
+            </div>
+            <div class="form-control">
+                <label>Options (Comma Separated)</label>
+                <input type="text" id="admin-options" placeholder="e.g., Dhaka, Sylhet, Khulna, Rajshahi" required>
+            </div>
+            <div class="form-control">
+                <label>Correct Answer</label>
+                <input type="text" id="admin-answer" placeholder="Must match one of the options exactly" required>
+            </div>
+            <button type="submit" class="next-btn" style="background-color: #10b981;">Add Question & Level</button>
+        </form>
+        <button class="back-btn mt-10">Exit Admin Mode</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
